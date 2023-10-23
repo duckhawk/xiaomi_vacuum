@@ -1,0 +1,134 @@
+type: picture-elements
+image: /local/Vacuum/xiaomi_vacuum_card.png
+elements:
+  - type: state-label
+    entity: sensor.vacuum_name
+    style:
+      top: 10%
+      left: 5%
+      transform: none
+  - type: state-label
+    entity: sensor.vacuum_error
+    style:
+      top: 20%
+      left: 5%
+      transform: none
+  - type: state-label
+    entity: sensor.vacuum_area
+    style:
+      top: 30%
+      left: 5%
+      font-size: 80%
+      transform: none
+  - type: state-label
+    entity: sensor.vacuum_status
+    style:
+      top: 40%
+      left: 5%
+      font-size: 80%
+      transform: none
+  - type: state-label
+    entity: sensor.vacuum_time
+    style:
+      top: 50%
+      left: 5%
+      font-size: 80%
+      transform: none
+  - type: state-label
+    entity: sensor.vacuum_battery
+    style:
+      top: 60%
+      left: 5%
+      font-size: 80%
+      transform: none
+  - type: state-label
+    entity: sensor.vacuum_mode
+    style:
+      top: 70%
+      left: 5%
+      font-size: 80%
+      transform: none
+  - type: icon
+    icon: mdi:play
+    tap_action:
+      action: call-service
+      service: vacuum.start
+      service_data:
+        entity_id: vacuum.mi_robot_vacuum_mop_essential
+    style:
+      top: 92%
+      left: 60%
+  - type: icon
+    icon: mdi:stop
+    tap_action:
+      action: call-service
+      service: vacuum.stop
+      service_data:
+        entity_id: vacuum.mi_robot_vacuum_mop_essential
+    style:
+      top: 92%
+      left: 70%
+  - type: icon
+    icon: mdi:home
+    tap_action:
+      action: call-service
+      service: vacuum.return_to_base
+      service_data:
+        entity_id: vacuum.mi_robot_vacuum_mop_essential
+    style:
+      top: 92%
+      left: 80%
+  - type: icon
+    icon: mdi:bell-ring
+    tap_action:
+      action: call-service
+      service: vacuum.locate
+      service_data:
+        entity_id: vacuum.mi_robot_vacuum_mop_essential
+    style:
+      top: 92%
+      left: 90%
+  - type: icon
+    icon: mdi:fan-remove
+    tap_action:
+      action: call-service
+      service: vacuum.set_fan_speed
+      service_data:
+        entity_id: vacuum.mi_robot_vacuum_mop_essential
+        fan_speed: 0
+    style:
+      top: 92%
+      left: 10%
+  - type: icon
+    icon: mdi:fan-speed-1
+    tap_action:
+      action: call-service
+      service: vacuum.set_fan_speed
+      service_data:
+        entity_id: vacuum.mi_robot_vacuum_mop_essential
+        fan_speed: 1
+    style:
+      top: 92%
+      left: 20%
+  - type: icon
+    icon: mdi:fan-speed-2
+    tap_action:
+      action: call-service
+      service: vacuum.set_fan_speed
+      service_data:
+        entity_id: vacuum.mi_robot_vacuum_mop_essential
+        fan_speed: 2
+    style:
+      top: 92%
+      left: 30%
+  - type: icon
+    icon: mdi:fan-speed-3
+    tap_action:
+      action: call-service
+      service: vacuum.set_fan_speed
+      service_data:
+        entity_id: vacuum.mi_robot_vacuum_mop_essential
+        fan_speed: 3
+    style:
+      top: 92%
+      left: 40%
