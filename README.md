@@ -1,5 +1,5 @@
 # xiaomi_vacuum
-Custom component for Vacuum 1C SKV4073CN (mijia.vacuum.v2).
+Home Assistant custom component for Vacuum 1C SKV4073CN (mijia.vacuum.v2).
 
 Based on https://github.com/DavidConnack/xiaomi_vacuum
 
