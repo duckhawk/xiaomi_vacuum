@@ -1,0 +1,59 @@
+- platform: template
+  sensors:
+    vacuum_status:
+      friendly_name: "Vacuum - Status"
+      value_template: "Status: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.status }}"
+
+- platform: template
+  sensors:
+    vacuum_name:
+      friendly_name: "Vacuum - Name"
+      value_template: "{{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.friendly_name }}"
+
+- platform: template
+  sensors:
+    vacuum_error:
+      friendly_name: "Vacuum - Error"
+      value_template: "{{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.error }}"
+
+- platform: template
+  sensors:
+    vacuum_mode:
+      friendly_name: "Vacuum - Mode"
+      value_template: "Mode: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.fan_speed }}"
+
+- platform: template
+  sensors:
+    vacuum_area:
+      friendly_name: "Vacuum - Area"
+      value_template: "Area: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.cleaning_area }}"
+
+- platform: template
+  sensors:
+    vacuum_time:
+      friendly_name: "Vacuum - Time"
+      value_template: "Time: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.cleaning_time }}"
+
+- platform: template
+  sensors:
+    vacuum_main_brush:
+      friendly_name: "Vacuum - Main Brush"
+      value_template: "Main Brush: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.main_brush_time_left }}"
+
+- platform: template
+  sensors:
+    vacuum_side_brush:
+      friendly_name: "Vacuum - Side Brush"
+      value_template: "Side Brush: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.side_brush_time_left }}"
+
+- platform: template
+  sensors:
+    vacuum_filter:
+      friendly_name: "Vacuum - Filter"
+      value_template: "Filter: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.filter_left_time }}"
+
+- platform: template
+  sensors:
+    vacuum_battery:
+      friendly_name: "Vacuum - Battery"
+      value_template: "Battery: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.battery_level }}"
