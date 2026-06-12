@@ -79,9 +79,9 @@ SPEED_CODE_TO_NAME = {
 }
 
 WATER_CODE_TO_NAME = {
-    G1WaterLevel.Low: "Low",
-    G1WaterLevel.Medium: "Med",
-    G1WaterLevel.High: "High",
+    G1WaterLevel.Level1: "Low",
+    G1WaterLevel.Level2: "Med",
+    G1WaterLevel.Level3: "High",
 }
 
 
