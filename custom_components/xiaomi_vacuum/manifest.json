@@ -1,8 +1,8 @@
 {
   "domain": "xiaomi_vacuum",
   "name": "Xiaomi Vacuum",
-  "documentation": "",
-  "requirements": ["python-miio==0.5.12"],
+  "documentation": "https://github.com/duckhawk/xiaomi_vacuum",
+  "requirements": ["python-miio>=0.5.12"],
   "codeowners": ["@duckhawk"],
-  "version": "0.1"
+  "version": "0.2.0"
 }

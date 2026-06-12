@@ -1,59 +1,75 @@
-- platform: template
-  sensors:
-    vacuum_status:
-      friendly_name: "Vacuum - Status"
-      value_template: "Status: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.status }}"
+- sensor:
+    - default_entity_id: sensor.vacuum_status
+      name: Vacuum - Status
+      state: >-
+        {% set vacuum = 'vacuum.mi_robot_vacuum_mop_essential' %}
+        Status: {{ state_attr(vacuum, 'status') | default('unknown') }}
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
 
-- platform: template
-  sensors:
-    vacuum_name:
-      friendly_name: "Vacuum - Name"
-      value_template: "{{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.friendly_name }}"
+- sensor:
+    - default_entity_id: sensor.vacuum_name
+      name: Vacuum - Name
+      state: "{{ state_attr('vacuum.mi_robot_vacuum_mop_essential', 'friendly_name') | default('Mi Robot Vacuum-Mop Essential') }}"
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
 
-- platform: template
-  sensors:
-    vacuum_error:
-      friendly_name: "Vacuum - Error"
-      value_template: "{{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.error }}"
+- sensor:
+    - default_entity_id: sensor.vacuum_error
+      name: Vacuum - Error
+      state: "{{ state_attr('vacuum.mi_robot_vacuum_mop_essential', 'error') | default('unknown') }}"
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
 
-- platform: template
-  sensors:
-    vacuum_mode:
-      friendly_name: "Vacuum - Mode"
-      value_template: "Mode: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.fan_speed }}"
+- sensor:
+    - default_entity_id: sensor.vacuum_mode
+      name: Vacuum - Mode
+      state: >-
+        Mode: {{ state_attr('vacuum.mi_robot_vacuum_mop_essential', 'fan_speed') | default('unknown') }}
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
 
-- platform: template
-  sensors:
-    vacuum_area:
-      friendly_name: "Vacuum - Area"
-      value_template: "Area: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.cleaning_area }}"
+- sensor:
+    - default_entity_id: sensor.vacuum_area
+      name: Vacuum - Area
+      state: >-
+        Area: {{ state_attr('vacuum.mi_robot_vacuum_mop_essential', 'cleaning_area') | default('unknown') }}
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
 
-- platform: template
-  sensors:
-    vacuum_time:
-      friendly_name: "Vacuum - Time"
-      value_template: "Time: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.cleaning_time }}"
+- sensor:
+    - default_entity_id: sensor.vacuum_time
+      name: Vacuum - Time
+      state: >-
+        Time: {{ state_attr('vacuum.mi_robot_vacuum_mop_essential', 'cleaning_time') | default('unknown') }}
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
 
-- platform: template
-  sensors:
-    vacuum_main_brush:
-      friendly_name: "Vacuum - Main Brush"
-      value_template: "Main Brush: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.main_brush_time_left }}"
+- sensor:
+    - default_entity_id: sensor.vacuum_main_brush
+      name: Vacuum - Main Brush
+      state: >-
+        Main Brush: {{ state_attr('vacuum.mi_robot_vacuum_mop_essential', 'main_brush_time_left') | default('unknown') }}
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
 
-- platform: template
-  sensors:
-    vacuum_side_brush:
-      friendly_name: "Vacuum - Side Brush"
-      value_template: "Side Brush: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.side_brush_time_left }}"
+- sensor:
+    - default_entity_id: sensor.vacuum_side_brush
+      name: Vacuum - Side Brush
+      state: >-
+        Side Brush: {{ state_attr('vacuum.mi_robot_vacuum_mop_essential', 'side_brush_time_left') | default('unknown') }}
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
 
-- platform: template
-  sensors:
-    vacuum_filter:
-      friendly_name: "Vacuum - Filter"
-      value_template: "Filter: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.filter_left_time }}"
+- sensor:
+    - default_entity_id: sensor.vacuum_filter
+      name: Vacuum - Filter
+      state: >-
+        Filter: {{ state_attr('vacuum.mi_robot_vacuum_mop_essential', 'filter_left_time') | default('unknown') }}
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
 
-- platform: template
-  sensors:
-    vacuum_battery:
-      friendly_name: "Vacuum - Battery"
-      value_template: "Battery: {{ states.vacuum.mi_robot_vacuum_mop_essential.attributes.battery_level }}"
+- sensor:
+    - default_entity_id: sensor.vacuum_sensor
+      name: Vacuum - Sensor
+      state: >-
+        Sensor: {{ state_attr('vacuum.mi_robot_vacuum_mop_essential', 'sensor_dirty_left') | default('unknown') }}
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
+
+- sensor:
+    - default_entity_id: sensor.vacuum_battery
+      name: Vacuum - Battery
+      state: >-
+        Battery: {{ state_attr('vacuum.mi_robot_vacuum_mop_essential', 'battery_level') | default('unknown') }}
+      availability: "{{ has_value('vacuum.mi_robot_vacuum_mop_essential') }}"
